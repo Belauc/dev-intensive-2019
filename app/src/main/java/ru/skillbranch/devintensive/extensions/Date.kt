@@ -47,16 +47,16 @@ fun Date.humanizeDiff(date:Date = Date()): String{
             in 0..1 -> "только что"
             in 1..45 -> "несколько секунд назад"
             in 45..75 -> "минуту назад"
-            else -> return when(val time = TimeUnit.MILLISECONDS.toMinutes(difference)){
+            else -> when(val time = TimeUnit.MILLISECONDS.toMinutes(difference)){
                 in 2..4 -> "$time минуты назад"
                 in 4..60 -> "$time минут назад"
                 in 61..75 -> "час назад"
-                else -> return when(val time2 = TimeUnit.MILLISECONDS.toHours(difference)){
+                else -> when(val time2 = TimeUnit.MILLISECONDS.toHours(difference)){
                     in 1..4 -> "$time2 часа назад"
                     in 5..20 -> "$time2 часов назад"
                     in 21..26 -> "день назад"
                     in 26..360 -> "$time2 дней назад"
-                    else -> return "более года назад"
+                    else -> "более года назад"
 
                 }
             }
