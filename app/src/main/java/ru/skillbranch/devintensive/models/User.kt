@@ -3,7 +3,7 @@ package ru.skillbranch.devintensive.models
 import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
 
-data class User(val id:Int,
+data class User(val id:String,
            var firstName : String?,
            var lastName : String?,
            var avatar : String?,
@@ -12,14 +12,14 @@ data class User(val id:Int,
            var lastVisit : Date? = Date(),
            var isOnline : Boolean = false
 ){
-    constructor(id: Int, firstName: String?, lastName: String?) :this(
+    constructor(id: String, firstName: String?, lastName: String?) :this(
         id,
         firstName,
         lastName,
         avatar = null
     )
 
-    constructor(id: Int): this(id, "John", "Doe")
+    constructor(id: String): this(id, "John", "Doe")
 
     init {
         println("Создан новый обьект с именем $lastName")
@@ -32,7 +32,7 @@ data class User(val id:Int,
 
             val (firstName, lastName) = Utils.parseFullName(fullName)
 
-            return User(id = lastId, firstName = firstName, lastName = lastName)
+            return User(id = "lastId", firstName = firstName, lastName = lastName)
         }
     }
 
