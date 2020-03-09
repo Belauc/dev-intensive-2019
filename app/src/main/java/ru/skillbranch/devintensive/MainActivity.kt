@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v:View?){
         if (v?.id == R.id.iv_send) {
-            val (phrase, color) = benderOdj.listenAnswer(messageEt.text.toString())
+            val (phrase, color) = benderOdj.listenAnswer(messageEt.text.toString().toLowerCase())
             messageEt.text = null
 
             val (r, g, b) = color

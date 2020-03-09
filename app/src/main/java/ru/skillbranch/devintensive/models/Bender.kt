@@ -21,7 +21,7 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
                 status = status.nextStatus()
                 "Это не правильный ответ\n${question.question}" to status.color
             }
-        
+
 
     }
     enum class Status(val color: Triple<Int,Int,Int> ) {
@@ -42,7 +42,7 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
     }
 
     enum class Question(val question: String, val answers: List<String>){
-        NAME("Как меня зовут?", listOf("Бендер", "Bender")) {
+        NAME("Как меня зовут?", listOf("бендер", "bender")) {
             override fun nextQuestion(): Question =  PROFESSION
             override fun  answerValidation(answer: String): Pair<String, Boolean> {
                 return if (answer[0].isLowerCase()){
