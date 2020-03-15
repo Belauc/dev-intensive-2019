@@ -26,7 +26,7 @@ object Utils {
     }
 
 
-    fun transliteration(str: String, divider:String = " "): String {
+    fun transliteration(str: String, divider:String = "_"): String {
 
         val repl = str.replace(Regex("[А-я]")){
             when (it.value)
